@@ -5,36 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>tagesschau-Korpus – Analyse</title>
   <meta name="description"
-        content="Aggregierte Auswertung von rund 3.895 automatisch transkribierten tagesschau-Sendungen (20 Uhr), 30.03.2014 bis 01.12.2025.">
+        content="Aggregierte Auswertung von rund 3.895 automatisch transkribierten tagesschau-Sendungen (20 Uhr), 30.03.2014 bis 01.12.2025. Nur Statistiken – keine Audios, keine Transkripte.">
+  <meta name="theme-color" content="#0b0e14">
+
+  <!-- Link-Vorschau (Open Graph) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="tagesschau-Korpus – Analyse">
+  <meta property="og:description"
+        content="3.895 Hauptausgaben, 8.102.027 Wörter, 1.006 Stunden Audio – aggregiert ausgewertet.">
+  <meta property="og:image" content="https://pauleburlon.github.io/tagesschau-analyse/charts/sendungen_pro_jahr.png">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='4' y='17' width='6' height='11' rx='1.5' fill='%234f9cf9'/><rect x='13' y='10' width='6' height='18' rx='1.5' fill='%234f9cf9'/><rect x='22' y='4' width='6' height='24' rx='1.5' fill='%2322d3ee'/></svg>">
   <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
-<header class="hero">
-  <div class="wrap">
-    <p class="kicker">Datenanalyse · Eigenprojekt</p>
-    <h1>Was die <em>tagesschau</em> sendet – in Zahlen</h1>
-    <p class="lede">
-      Auswertung von <strong>3.895</strong> Hauptausgaben der tagesschau (20:00&nbsp;Uhr)
-      von <strong>30.03.2014</strong> bis <strong>01.12.2025</strong>. Die Sendungen wurden
-      automatisch transkribiert; gezeigt werden ausschließlich aggregierte, selbst berechnete
-      Kennzahlen – keine Audios und keine Transkripte.
-    </p>
+<header class="nav">
+  <div class="row">
+    <a class="brand" href="#top">
+      <span class="mark" aria-hidden="true"></span>
+      <span>tagesschau<span class="brand-sub">·korpus</span></span>
+    </a>
+    <span class="meta">30.03.2014 – 01.12.2025</span>
   </div>
 </header>
 
-<main class="wrap">
+<section class="hero" id="top">
+  <span class="eyebrow">Datenanalyse · Eigenprojekt</span>
+  <h1>12 Jahre <span class="grad">tagesschau</span>, in Zahlen.</h1>
+  <p class="lede">
+    Auswertung von <strong>3.895</strong> Hauptausgaben (20:00&nbsp;Uhr) von
+    <strong>30.03.2014</strong> bis <strong>01.12.2025</strong>. Automatisch transkribiert;
+    gezeigt werden ausschließlich aggregierte, selbst berechnete Kennzahlen –
+    keine Audios, keine Transkripte.
+  </p>
+</section>
 
-  <section class="stats" aria-label="Überblick">
-    <div class="card"><span class="num">3.895</span><span class="lbl">Sendungen</span></div>
-    <div class="card"><span class="num">8.102.027</span><span class="lbl">Wörter gesamt</span></div>
-    <div class="card"><span class="num">1.006</span><span class="lbl">Stunden Audio</span></div>
-    <div class="card"><span class="num">12</span><span class="lbl">Jahre</span></div>
-    <div class="card"><span class="num">2.081</span><span class="lbl">Ø Wörter / Sendung</span></div>
-    <div class="card"><span class="num">15,5</span><span class="lbl">Ø Minuten / Sendung</span></div>
-  </section>
+<section class="stats reveal" aria-label="Überblick">
+  <div class="card"><span class="num">3.895</span><span class="lbl">Sendungen</span></div>
+  <div class="card"><span class="num">8.102.027</span><span class="lbl">Wörter gesamt</span></div>
+  <div class="card"><span class="num">1.006</span><span class="lbl">Stunden Audio</span></div>
+  <div class="card"><span class="num">12</span><span class="lbl">Jahre</span></div>
+  <div class="card"><span class="num">2.081</span><span class="lbl">Ø Wörter / Sendung</span></div>
+  <div class="card"><span class="num">15,5</span><span class="lbl">Ø Minuten / Sendung</span></div>
+</section>
 
-  <section>
+<main>
+
+  <section class="section reveal">
+    <span class="idx">01 — Umfang</span>
     <h2>Sendungen pro Jahr</h2>
     <p>
       Wie viele 20-Uhr-Ausgaben pro Jahr im Korpus liegen. Die tagesschau wird täglich gesendet,
@@ -47,24 +68,28 @@
     </figure>
   </section>
 
-  <section>
+  <section class="section reveal">
+    <span class="idx">02 — Sprache</span>
     <h2>Wie viel gesprochen wird</h2>
     <p>
       Im Schnitt umfasst eine Ausgabe rund <strong>2.081</strong> Wörter. Die Verteilung
       zeigt, wie stark einzelne Sendungen davon abweichen; die Jahreskurve, ob die Sendungen über
       die Zeit wortreicher oder knapper geworden sind.
     </p>
-    <figure>
-      <img src="charts/wortanzahl_verteilung.png" loading="lazy"
-           alt="Histogramm der Wortanzahl pro Sendung.">
-    </figure>
-    <figure>
-      <img src="charts/wortanzahl_pro_jahr.png" loading="lazy"
-           alt="Liniendiagramm: durchschnittliche Wortanzahl pro Jahr.">
-    </figure>
+    <div class="grid2">
+      <figure>
+        <img src="charts/wortanzahl_verteilung.png" loading="lazy"
+             alt="Histogramm der Wortanzahl pro Sendung.">
+      </figure>
+      <figure>
+        <img src="charts/wortanzahl_pro_jahr.png" loading="lazy"
+             alt="Liniendiagramm: durchschnittliche Wortanzahl pro Jahr.">
+      </figure>
+    </div>
   </section>
 
-  <section>
+  <section class="section reveal">
+    <span class="idx">03 — Länge</span>
     <h2>Wie lang eine Ausgabe ist</h2>
     <p>
       Die Hauptausgabe dauert im Mittel <strong>15,5</strong> Minuten. Das Histogramm zeigt
@@ -76,7 +101,8 @@
     </figure>
   </section>
 
-  <section>
+  <section class="section reveal">
+    <span class="idx">04 — Qualität</span>
     <h2>Qualität der Transkription</h2>
     <p>
       Zwei Kennzahlen prüfen die automatische Transkription. <em>Ohne erkannte Einleitung</em>
@@ -84,17 +110,19 @@
       abgeschnittenes Audio (insgesamt 5,7% der Sendungen). <em>avg_logprob</em>
       ist die mittlere Token-Wahrscheinlichkeit des Modells: je näher an 0, desto sicherer.
     </p>
-    <figure>
-      <img src="charts/missing_intro.png" loading="lazy"
-           alt="Balkendiagramm: Anteil der Sendungen ohne erkannte Einleitung pro Jahr.">
-    </figure>
-    <figure>
-      <img src="charts/logprob.png" loading="lazy"
-           alt="Histogramm der avg_logprob-Werte.">
-    </figure>
+    <div class="grid2">
+      <figure>
+        <img src="charts/missing_intro.png" loading="lazy"
+             alt="Balkendiagramm: Anteil der Sendungen ohne erkannte Einleitung pro Jahr.">
+      </figure>
+      <figure>
+        <img src="charts/logprob.png" loading="lazy"
+             alt="Histogramm der avg_logprob-Werte.">
+      </figure>
+    </div>
   </section>
 
-  <section class="method">
+  <section class="section reveal method">
     <h2>Methodik</h2>
     <ul>
       <li><strong>Quelle:</strong> öffentlich ausgestrahlte tagesschau 20:00&nbsp;Uhr (ARD / Das Erste),
@@ -108,41 +136,62 @@
     </ul>
   </section>
 
-  <section class="notice">
-    <h2>Quelle &amp; rechtlicher Hinweis</h2>
-    <p>
-      Diese Seite zeigt ausschließlich <strong>aggregierte, selbst berechnete Auswertungen</strong>
-      (Statistiken und Diagramme). Es werden <strong>keine Audiodateien, Transkripte oder
-      Untertitel</strong> der tagesschau veröffentlicht oder zum Abruf angeboten. Die zugrunde
-      liegenden Sendungen sind urheber- und leistungsschutzrechtlich geschützt (u.&nbsp;a.
-      §&nbsp;87 UrhG); die hier gezeigten Kennzahlen sind daraus abgeleitete Fakten.
-    </p>
-    <p>
-      „tagesschau“ und „ARD“ sind Marken der jeweiligen Rechteinhaber. Diese Seite ist ein
-      privates Datenanalyse-Projekt und steht in <strong>keiner Verbindung</strong> zur ARD,
-      zum NDR oder zur tagesschau.
-    </p>
-  </section>
-
-  <section class="notice">
-    <h2>Impressum</h2>
-    <!-- TODO: In Deutschland für nicht rein private Websites Pflicht (§ 5 DDG).
-         Echten Namen, ladungsfähige Anschrift und Kontakt eintragen. -->
-    <p>
-      [Vor- und Nachname]<br>
-      [Straße und Hausnummer]<br>
-      [PLZ Ort]<br>
-      E-Mail: [adresse@example.com]
-    </p>
+  <section class="section reveal">
+    <div class="notice-grid">
+      <div class="notice">
+        <h2>Quelle &amp; rechtlicher Hinweis</h2>
+        <p>
+          Diese Seite zeigt ausschließlich <strong>aggregierte, selbst berechnete Auswertungen</strong>.
+          Es werden <strong>keine Audiodateien, Transkripte oder Untertitel</strong> der tagesschau
+          veröffentlicht oder zum Abruf angeboten. Die zugrunde liegenden Sendungen sind urheber- und
+          leistungsschutzrechtlich geschützt (u.&nbsp;a. §&nbsp;87 UrhG); die gezeigten Kennzahlen sind
+          daraus abgeleitete Fakten.
+        </p>
+        <p>
+          „tagesschau“ und „ARD“ sind Marken der jeweiligen Rechteinhaber. Dieses private
+          Datenanalyse-Projekt steht in <strong>keiner Verbindung</strong> zur ARD, zum NDR oder
+          zur tagesschau.
+        </p>
+      </div>
+      <div class="notice">
+        <h2>Impressum</h2>
+        <!-- TODO: In Deutschland für nicht rein private Websites Pflicht (§ 5 DDG).
+             Echten Namen, ladungsfähige Anschrift und Kontakt eintragen. -->
+        <p>
+          [Vor- und Nachname]<br>
+          [Straße und Hausnummer]<br>
+          [PLZ Ort]<br>
+          E-Mail: [adresse@example.com]
+        </p>
+      </div>
+    </div>
   </section>
 
 </main>
 
 <footer>
-  <div class="wrap">
-    <p>Automatisch erzeugt am 17.06.2026 · Datenanalyse-Projekt, keine Verbindung zur ARD.</p>
+  <div class="row">
+    <span>Automatisch erzeugt am 17.06.2026</span>
+    <span>Datenanalyse-Projekt · keine Verbindung zur ARD</span>
   </div>
 </footer>
+
+<script>
+  // Scroll-reveal — progressive enhancement. Without JS, .reveal stays visible.
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function (el) { el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
 
 </body>
 </html>
