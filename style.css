@@ -1,0 +1,158 @@
+:root {
+  --blue: #1f4e79;
+  --blue-dark: #163a5a;
+  --ink: #1a1a1a;
+  --muted: #5f6b7a;
+  --line: #e6e8ec;
+  --bg: #ffffff;
+  --bg-soft: #f6f8fa;
+  --maxw: 820px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--bg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.65;
+  font-size: 17px;
+}
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ── Hero ─────────────────────────────────────────────────────────── */
+.hero {
+  background: linear-gradient(160deg, var(--blue) 0%, var(--blue-dark) 100%);
+  color: #fff;
+  padding: 64px 0 56px;
+  border-bottom: 4px solid var(--blue-dark);
+}
+.hero .kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  opacity: 0.8;
+  margin: 0 0 12px;
+}
+.hero h1 {
+  font-size: clamp(1.9rem, 5vw, 2.9rem);
+  line-height: 1.12;
+  margin: 0 0 18px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+.hero h1 em { font-style: italic; opacity: 0.95; }
+.hero .lede {
+  font-size: 1.08rem;
+  max-width: 60ch;
+  margin: 0;
+  opacity: 0.95;
+}
+.hero strong { font-weight: 700; }
+
+/* ── Stat cards ───────────────────────────────────────────────────── */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: -36px 0 8px;
+}
+.card {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px 18px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(22, 58, 90, 0.06);
+}
+.card .num {
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--blue);
+  letter-spacing: -0.01em;
+}
+.card .lbl {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* ── Sections ─────────────────────────────────────────────────────── */
+main { padding-bottom: 24px; }
+section { margin: 44px 0; }
+section h2 {
+  font-size: 1.45rem;
+  margin: 0 0 10px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--blue);
+  display: inline-block;
+}
+section p { color: #2c2c2c; margin: 0 0 18px; }
+section em { font-style: italic; color: var(--blue-dark); }
+
+figure {
+  margin: 0 0 22px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg);
+}
+figure img { display: block; width: 100%; height: auto; }
+
+code {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 1px 6px;
+  font-size: 0.88em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.method ul { margin: 0; padding-left: 1.2em; }
+.method li { margin: 0 0 8px; color: #2c2c2c; }
+
+/* ── Notices (legal / impressum) ──────────────────────────────────── */
+.notice {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 22px 24px;
+}
+.notice h2 {
+  font-size: 1.15rem;
+  border-bottom: none;
+  margin-bottom: 6px;
+}
+.notice p { font-size: 0.95rem; color: #3a3a3a; }
+.notice p:last-child { margin-bottom: 0; }
+
+/* ── Footer ───────────────────────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--line);
+  padding: 26px 0;
+  margin-top: 28px;
+}
+footer p {
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+  margin: 0;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────── */
+@media (max-width: 620px) {
+  body { font-size: 16px; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .hero { padding: 48px 0 44px; }
+}
