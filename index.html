@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tagesschau um 20 Uhr</title>
   <meta name="description"
-        content="Aggregierte Auswertung von rund 3.895 automatisch transkribierten tagesschau-Sendungen (20 Uhr), 30.03.2014 bis 01.12.2025. Nur Statistiken – keine Audios, keine Transkripte.">
+        content="Daten-Explorer: aggregierte Auswertung von rund 3.895 automatisch transkribierten tagesschau-Sendungen (20 Uhr), 30.03.2014 bis 01.12.2025.">
   <meta name="theme-color" content="#0b0e14">
 
-  <!-- Link-Vorschau (Open Graph) -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_DE">
   <meta property="og:title" content="Tagesschau um 20 Uhr">
@@ -17,7 +16,7 @@
   <meta property="og:image" content="https://pauleburlon.github.io/tagesschau-analyse/charts/sendungen_pro_jahr.png">
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='4' y='17' width='6' height='11' rx='1.5' fill='%234f9cf9'/><rect x='13' y='10' width='6' height='18' rx='1.5' fill='%234f9cf9'/><rect x='22' y='4' width='6' height='24' rx='1.5' fill='%2322d3ee'/></svg>">
-  <link rel="stylesheet" href="style.css?v=791af1c2">
+  <link rel="stylesheet" href="style.css?v=c02f965c">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -29,174 +28,224 @@
   <span class="orb o4"></span>
 </div>
 
-<header class="nav">
-  <div class="row">
-    <a class="brand" href="#top">
+<div class="app">
+
+  <!-- ── Selection panel (sidebar) ───────────────────────────────── -->
+  <aside class="sidebar">
+    <a class="brand" href="#ueberblick">
       <span class="mark" aria-hidden="true"></span>
       <span>Tagesschau<span class="brand-sub"> um 20 Uhr</span></span>
     </a>
-    <span class="meta">30.03.2014 – 01.12.2025</span>
-  </div>
-</header>
 
-<section class="hero" id="top">
-  <span class="eyebrow">Datenanalyse · Eigenprojekt</span>
-  <h1>12 Jahre <span class="grad">tagesschau</span>, in Zahlen.</h1>
-  <p class="lede">
-    Auswertung von <strong>3.895</strong> Hauptausgaben (20:00&nbsp;Uhr) von
-    <strong>30.03.2014</strong> bis <strong>01.12.2025</strong>. Automatisch transkribiert;
-    gezeigt werden ausschließlich aggregierte, selbst berechnete Kennzahlen –
-    keine Audios, keine Transkripte.
-  </p>
-</section>
+    <nav class="metric-nav" aria-label="Kennzahl wählen">
+      <p class="nav-label">Kennzahl</p>
+      <button data-view="ueberblick" class="active">Überblick</button>
+      <button data-view="sendungen">Sendungen pro Jahr</button>
+      <button data-view="wortanzahl">Wortanzahl</button>
+      <button data-view="dauer">Audio-Dauer</button>
+      <button data-view="qualitaet">Transkriptqualität</button>
+      <p class="nav-label">Info</p>
+      <button data-view="quelle">Quelle &amp; Recht</button>
+    </nav>
 
-<section class="stats reveal" aria-label="Überblick">
-  <div class="card"><span class="num">3.895</span><span class="lbl">Sendungen</span></div>
-  <div class="card"><span class="num">8.102.027</span><span class="lbl">Wörter gesamt</span></div>
-  <div class="card"><span class="num">1.006</span><span class="lbl">Stunden Audio</span></div>
-  <div class="card"><span class="num">12</span><span class="lbl">Jahre</span></div>
-  <div class="card"><span class="num">2.081</span><span class="lbl">Ø Wörter / Sendung</span></div>
-  <div class="card"><span class="num">15,5</span><span class="lbl">Ø Minuten / Sendung</span></div>
-</section>
-
-<main>
-
-  <section class="section reveal">
-    <span class="idx">01 — Umfang</span>
-    <h2>Sendungen pro Jahr</h2>
-    <p>
-      Wie viele 20-Uhr-Ausgaben pro Jahr im Korpus liegen. Die tagesschau wird täglich gesendet,
-      sodass ein volles Jahr nahe an 365 Ausgaben liegt. Der Korpus beginnt am 30.03.2014 und
-      reicht bis 01.12.2025; das erste und das letzte Jahr sind daher angeschnitten.
-    </p>
-    <figure>
-      <img src="charts/sendungen_pro_jahr.png" loading="lazy"
-           alt="Balkendiagramm: Anzahl der tagesschau-Sendungen je Jahr.">
-    </figure>
-  </section>
-
-  <section class="section reveal">
-    <span class="idx">02 — Sprache</span>
-    <h2>Wie viel gesprochen wird</h2>
-    <p>
-      Im Schnitt umfasst eine Ausgabe rund <strong>2.081</strong> Wörter. Die Verteilung
-      zeigt, wie stark einzelne Sendungen davon abweichen; die Jahreskurve, ob die Sendungen über
-      die Zeit wortreicher oder knapper geworden sind.
-    </p>
-    <div class="grid2">
-      <figure>
-        <img src="charts/wortanzahl_verteilung.png" loading="lazy"
-             alt="Histogramm der Wortanzahl pro Sendung.">
-      </figure>
-      <figure>
-        <img src="charts/wortanzahl_pro_jahr.png" loading="lazy"
-             alt="Liniendiagramm: durchschnittliche Wortanzahl pro Jahr.">
-      </figure>
+    <div class="side-data">
+      <p class="nav-label">Daten</p>
+      <a class="dl" href="daten/jahreswerte.csv" download>
+        <span class="ic" aria-hidden="true">↓</span> Jahreswerte (CSV)
+      </a>
+      <p class="side-note">3.895 Sendungen · 30.03.2014 – 01.12.2025</p>
     </div>
-  </section>
+  </aside>
 
-  <section class="section reveal">
-    <span class="idx">03 — Länge</span>
-    <h2>Wie lang eine Ausgabe ist</h2>
-    <p>
-      Die Hauptausgabe dauert im Mittel <strong>15,5</strong> Minuten. Das Histogramm zeigt
-      die Streuung der Audio-Längen über alle erfassten Sendungen.
-    </p>
-    <figure>
-      <img src="charts/audio_dauer.png" loading="lazy"
-           alt="Histogramm der Audio-Dauer in Minuten.">
-    </figure>
-  </section>
+  <!-- ── View area ───────────────────────────────────────────────── -->
+  <main class="content">
+    <header class="content-head">
+      <span class="eyebrow">Daten-Explorer · Eigenprojekt</span>
+      <h1>Tagesschau um <span class="grad">20 Uhr</span></h1>
+      <p class="lede">
+        Aggregierte Auswertung von <strong>3.895</strong> Hauptausgaben,
+        automatisch transkribiert. Wähle links eine Kennzahl. Gezeigt werden ausschließlich
+        selbst berechnete Werte – keine Audios, keine Transkripte.
+      </p>
+    </header>
 
-  <section class="section reveal">
-    <span class="idx">04 — Qualität</span>
-    <h2>Qualität der Transkription</h2>
-    <p>
-      Zwei Kennzahlen prüfen die automatische Transkription. <em>Ohne erkannte Einleitung</em>
-      markiert Ausgaben, in denen die typische Anfangsformel fehlt – ein Hinweis auf am Anfang
-      abgeschnittenes Audio (insgesamt 5,7% der Sendungen). <em>avg_logprob</em>
-      ist die mittlere Token-Wahrscheinlichkeit des Modells: je näher an 0, desto sicherer.
-    </p>
-    <div class="grid2">
-      <figure>
-        <img src="charts/missing_intro.png" loading="lazy"
-             alt="Balkendiagramm: Anteil der Sendungen ohne erkannte Einleitung pro Jahr.">
-      </figure>
-      <figure>
-        <img src="charts/logprob.png" loading="lazy"
-             alt="Histogramm der avg_logprob-Werte.">
-      </figure>
-    </div>
-  </section>
-
-  <section class="section reveal method">
-    <h2>Methodik</h2>
-    <ul>
-      <li><strong>Quelle:</strong> öffentlich ausgestrahlte tagesschau 20:00&nbsp;Uhr (ARD / Das Erste),
-          Sendungsarchiv von tagesschau.de.</li>
-      <li><strong>Transkription:</strong> automatisch mit OpenAI Whisper, Modell
-          <code>large-v3-turbo</code> (<code>int8</code>).</li>
-      <li><strong>Auswertung:</strong> Python (pandas, matplotlib). Alle Diagramme sind selbst
-          berechnet und werden bei jedem Build aus den Rohdaten neu erzeugt.</li>
-      <li><strong>Stand der Daten:</strong> 30.03.2014 – 01.12.2025,
-          3.895 Sendungen, davon 100,0% transkribiert.</li>
-    </ul>
-  </section>
-
-  <section class="section reveal">
-    <div class="notice-grid">
-      <div class="notice">
-        <h2>Quelle &amp; rechtlicher Hinweis</h2>
-        <p>
-          Diese Seite zeigt ausschließlich <strong>aggregierte, selbst berechnete Auswertungen</strong>.
-          Es werden <strong>keine Audiodateien, Transkripte oder Untertitel</strong> der tagesschau
-          veröffentlicht oder zum Abruf angeboten. Die zugrunde liegenden Sendungen sind urheber- und
-          leistungsschutzrechtlich geschützt (u.&nbsp;a. §&nbsp;87 UrhG); die gezeigten Kennzahlen sind
-          daraus abgeleitete Fakten.
-        </p>
-        <p>
-          „tagesschau“ und „ARD“ sind Marken der jeweiligen Rechteinhaber. Dieses private
-          Datenanalyse-Projekt steht in <strong>keiner Verbindung</strong> zur ARD, zum NDR oder
-          zur tagesschau.
-        </p>
+    <!-- Überblick -->
+    <section class="view" id="view-ueberblick" aria-label="Überblick">
+      <h2>Überblick</h2>
+      <p>Eckdaten des Korpus über den gesamten erfassten Zeitraum.</p>
+      <div class="stats">
+        <div class="card"><span class="num">3.895</span><span class="lbl">Sendungen</span></div>
+        <div class="card"><span class="num">8.102.027</span><span class="lbl">Wörter gesamt</span></div>
+        <div class="card"><span class="num">1.006</span><span class="lbl">Stunden Audio</span></div>
+        <div class="card"><span class="num">12</span><span class="lbl">Jahre</span></div>
+        <div class="card"><span class="num">2.081</span><span class="lbl">Ø Wörter / Sendung</span></div>
+        <div class="card"><span class="num">15,5</span><span class="lbl">Ø Minuten / Sendung</span></div>
       </div>
-      <div class="notice">
-        <h2>Impressum</h2>
-        <!-- TODO: In Deutschland für nicht rein private Websites Pflicht (§ 5 DDG).
-             Echten Namen, ladungsfähige Anschrift und Kontakt eintragen. -->
-        <p>
-          [Vor- und Nachname]<br>
-          [Straße und Hausnummer]<br>
-          [PLZ Ort]<br>
-          E-Mail: [adresse@example.com]
-        </p>
+    </section>
+
+    <!-- Sendungen pro Jahr -->
+    <section class="view" id="view-sendungen" aria-label="Sendungen pro Jahr" hidden>
+      <h2>Sendungen pro Jahr</h2>
+      <p>
+        Anzahl der erfassten 20-Uhr-Ausgaben je Jahr. Der Korpus beginnt am 30.03.2014 und
+        reicht bis 01.12.2025; das erste und das letzte Jahr sind daher angeschnitten.
+      </p>
+      <figure><img src="charts/sendungen_pro_jahr.png" loading="lazy"
+            alt="Balkendiagramm: Anzahl der tagesschau-Sendungen je Jahr."></figure>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Jahr</th><th>Sendungen</th></tr></thead>
+          <tbody><tr><td>2014</td><td>177</td></tr><tr><td>2015</td><td>358</td></tr><tr><td>2016</td><td>358</td></tr><tr><td>2017</td><td>353</td></tr><tr><td>2018</td><td>357</td></tr><tr><td>2019</td><td>361</td></tr><tr><td>2020</td><td>359</td></tr><tr><td>2021</td><td>351</td></tr><tr><td>2022</td><td>349</td></tr><tr><td>2023</td><td>361</td></tr><tr><td>2024</td><td>353</td></tr><tr><td>2025</td><td>158</td></tr></tbody>
+        </table>
       </div>
-    </div>
-  </section>
+    </section>
 
-</main>
+    <!-- Wortanzahl -->
+    <section class="view" id="view-wortanzahl" aria-label="Wortanzahl" hidden>
+      <h2>Wortanzahl</h2>
+      <div class="statline">
+        <span class="stat"><b>2.081</b><span>Ø Wörter</span></span>
+        <span class="stat"><b>2.062</b><span>Median</span></span>
+        <span class="stat"><b>11.021</b><span>Maximum</span></span>
+      </div>
+      <p>
+        Wörter pro Ausgabe – Verteilung über alle Sendungen sowie der Jahresdurchschnitt.
+      </p>
+      <div class="grid2">
+        <figure><img src="charts/wortanzahl_verteilung.png" loading="lazy"
+              alt="Histogramm der Wortanzahl pro Sendung."></figure>
+        <figure><img src="charts/wortanzahl_pro_jahr.png" loading="lazy"
+              alt="Liniendiagramm: durchschnittliche Wortanzahl pro Jahr."></figure>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Jahr</th><th>Ø Wörter</th></tr></thead>
+          <tbody><tr><td>2014</td><td>2.079</td></tr><tr><td>2015</td><td>2.096</td></tr><tr><td>2016</td><td>2.102</td></tr><tr><td>2017</td><td>2.070</td></tr><tr><td>2018</td><td>2.064</td></tr><tr><td>2019</td><td>2.052</td></tr><tr><td>2020</td><td>2.083</td></tr><tr><td>2021</td><td>2.038</td></tr><tr><td>2022</td><td>2.047</td></tr><tr><td>2023</td><td>2.078</td></tr><tr><td>2024</td><td>2.143</td></tr><tr><td>2025</td><td>2.158</td></tr></tbody>
+        </table>
+      </div>
+    </section>
 
-<footer>
-  <div class="row">
-    <span>Automatisch erzeugt am 17.06.2026</span>
-    <span>Datenanalyse-Projekt · keine Verbindung zur ARD</span>
-  </div>
-</footer>
+    <!-- Audio-Dauer -->
+    <section class="view" id="view-dauer" aria-label="Audio-Dauer" hidden>
+      <h2>Audio-Dauer</h2>
+      <div class="statline">
+        <span class="stat"><b>15,5</b><span>Ø Minuten</span></span>
+        <span class="stat"><b>15,3</b><span>Median</span></span>
+        <span class="stat"><b>74,4</b><span>Maximum</span></span>
+        <span class="stat"><b>1.006</b><span>Stunden gesamt</span></span>
+      </div>
+      <p>Verteilung der Audio-Längen über alle erfassten Sendungen.</p>
+      <figure><img src="charts/audio_dauer.png" loading="lazy"
+            alt="Histogramm der Audio-Dauer in Minuten."></figure>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Jahr</th><th>Ø Dauer (min)</th></tr></thead>
+          <tbody><tr><td>2014</td><td>15,2</td></tr><tr><td>2015</td><td>15,4</td></tr><tr><td>2016</td><td>15,5</td></tr><tr><td>2017</td><td>15,4</td></tr><tr><td>2018</td><td>15,4</td></tr><tr><td>2019</td><td>15,4</td></tr><tr><td>2020</td><td>15,7</td></tr><tr><td>2021</td><td>15,3</td></tr><tr><td>2022</td><td>15,4</td></tr><tr><td>2023</td><td>15,5</td></tr><tr><td>2024</td><td>15,9</td></tr><tr><td>2025</td><td>15,9</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Transkriptqualität -->
+    <section class="view" id="view-qualitaet" aria-label="Transkriptqualität" hidden>
+      <h2>Transkriptqualität</h2>
+      <div class="statline">
+        <span class="stat"><b>100,0%</b><span>transkribiert</span></span>
+        <span class="stat"><b>5,7%</b><span>ohne Einleitung</span></span>
+      </div>
+      <p>
+        <em>Ohne erkannte Einleitung</em> markiert Ausgaben, in denen die typische Anfangsformel
+        fehlt – ein Hinweis auf am Anfang abgeschnittenes Audio. <em>avg_logprob</em> ist die
+        mittlere Token-Wahrscheinlichkeit des Modells: je näher an 0, desto sicherer.
+      </p>
+      <div class="grid2">
+        <figure><img src="charts/missing_intro.png" loading="lazy"
+              alt="Balkendiagramm: Anteil der Sendungen ohne erkannte Einleitung pro Jahr."></figure>
+        <figure><img src="charts/logprob.png" loading="lazy"
+              alt="Histogramm der avg_logprob-Werte."></figure>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Jahr</th><th>Ohne Einleitung</th></tr></thead>
+          <tbody><tr><td>2014</td><td>5,6&nbsp;%</td></tr><tr><td>2015</td><td>4,5&nbsp;%</td></tr><tr><td>2016</td><td>4,2&nbsp;%</td></tr><tr><td>2017</td><td>2,5&nbsp;%</td></tr><tr><td>2018</td><td>3,6&nbsp;%</td></tr><tr><td>2019</td><td>2,8&nbsp;%</td></tr><tr><td>2020</td><td>3,6&nbsp;%</td></tr><tr><td>2021</td><td>8,5&nbsp;%</td></tr><tr><td>2022</td><td>11,5&nbsp;%</td></tr><tr><td>2023</td><td>10,8&nbsp;%</td></tr><tr><td>2024</td><td>6,8&nbsp;%</td></tr><tr><td>2025</td><td>1,9&nbsp;%</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Quelle & Recht -->
+    <section class="view" id="view-quelle" aria-label="Quelle und Recht" hidden>
+      <h2>Quelle &amp; Recht</h2>
+      <div class="method">
+        <h3>Methodik</h3>
+        <ul>
+          <li><strong>Quelle:</strong> öffentlich ausgestrahlte tagesschau 20:00&nbsp;Uhr
+              (ARD / Das Erste), Sendungsarchiv von tagesschau.de.</li>
+          <li><strong>Transkription:</strong> automatisch mit OpenAI Whisper, Modell
+              <code>large-v3-turbo</code> (<code>int8</code>).</li>
+          <li><strong>Auswertung:</strong> Python (pandas, matplotlib); alle Werte werden bei
+              jedem Build aus den Rohdaten neu berechnet.</li>
+          <li><strong>Stand:</strong> 30.03.2014 – 01.12.2025, 3.895 Sendungen,
+              davon 100,0% transkribiert.</li>
+        </ul>
+      </div>
+      <div class="notice-grid">
+        <div class="notice">
+          <h3>Rechtlicher Hinweis</h3>
+          <p>
+            Diese Seite zeigt ausschließlich <strong>aggregierte, selbst berechnete Auswertungen</strong>.
+            Es werden <strong>keine Audiodateien, Transkripte oder Untertitel</strong> veröffentlicht.
+            Die zugrunde liegenden Sendungen sind urheber- und leistungsschutzrechtlich geschützt
+            (u.&nbsp;a. §&nbsp;87 UrhG); die gezeigten Kennzahlen sind daraus abgeleitete Fakten.
+          </p>
+          <p>
+            „tagesschau“ und „ARD“ sind Marken der jeweiligen Rechteinhaber. Dieses private
+            Datenanalyse-Projekt steht in <strong>keiner Verbindung</strong> zur ARD.
+          </p>
+        </div>
+        <div class="notice">
+          <h3>Impressum</h3>
+          <!-- TODO: In Deutschland für nicht rein private Websites Pflicht (§ 5 DDG). -->
+          <p>
+            [Vor- und Nachname]<br>
+            [Straße und Hausnummer]<br>
+            [PLZ Ort]<br>
+            E-Mail: [adresse@example.com]
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>Automatisch erzeugt am 17.06.2026</span>
+      <span>Datenanalyse-Projekt · keine Verbindung zur ARD</span>
+    </footer>
+  </main>
+</div>
 
 <script>
-  // Scroll-reveal — progressive enhancement. Without JS, .reveal stays visible.
   (function () {
-    var els = document.querySelectorAll('.reveal');
-    if (!('IntersectionObserver' in window)) {
-      els.forEach(function (el) { el.classList.add('in'); });
-      return;
-    }
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    var buttons = document.querySelectorAll('.metric-nav button[data-view]');
+    var views = document.querySelectorAll('.view');
+    function show(id) {
+      var found = false;
+      views.forEach(function (v) {
+        var on = v.id === 'view-' + id;
+        v.hidden = !on;
+        if (on) found = true;
       });
-    }, { threshold: 0.12 });
-    els.forEach(function (el) { io.observe(el); });
+      if (!found) { return show('ueberblick'); }
+      buttons.forEach(function (b) {
+        var on = b.dataset.view === id;
+        b.classList.toggle('active', on);
+        if (on) { b.setAttribute('aria-current', 'true'); }
+        else { b.removeAttribute('aria-current'); }
+      });
+      if (history.replaceState) { history.replaceState(null, '', '#' + id); }
+      window.scrollTo({ top: 0 });
+    }
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () { show(b.dataset.view); });
+    });
+    show((location.hash || '#ueberblick').slice(1));
   })();
 </script>
 
