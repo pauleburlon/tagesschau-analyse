@@ -306,29 +306,41 @@ footer .row {
   will-change: transform;
 }
 .orb.o1 {
-  width: 540px; height: 540px; left: -130px; top: -150px;
-  background: radial-gradient(circle, rgba(79, 156, 249, 0.55), transparent 70%);
-  animation: drift1 26s ease-in-out infinite alternate;
+  width: 520px; height: 520px; left: -120px; top: -140px;
+  background: radial-gradient(circle, rgba(79, 156, 249, 0.60), transparent 70%);
+  animation: drift1 19s ease-in-out infinite;
 }
 .orb.o2 {
-  width: 460px; height: 460px; right: -120px; top: 6%;
-  background: radial-gradient(circle, rgba(34, 211, 238, 0.45), transparent 70%);
-  animation: drift2 32s ease-in-out infinite alternate;
+  width: 460px; height: 460px; right: -120px; top: 4%;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.50), transparent 70%);
+  animation: drift2 23s ease-in-out infinite;
 }
 .orb.o3 {
-  width: 620px; height: 620px; left: 22%; top: 48%;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.42), transparent 70%);
-  animation: drift3 38s ease-in-out infinite alternate;
+  width: 600px; height: 600px; left: 18%; top: 44%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.50), transparent 70%);
+  animation: drift3 27s ease-in-out infinite;
 }
 .orb.o4 {
-  width: 400px; height: 400px; right: 10%; bottom: -130px;
-  background: radial-gradient(circle, rgba(79, 156, 249, 0.35), transparent 70%);
-  animation: drift4 30s ease-in-out infinite alternate;
+  width: 380px; height: 380px; right: 8%; bottom: -120px;
+  background: radial-gradient(circle, rgba(79, 156, 249, 0.42), transparent 70%);
+  animation: drift4 21s ease-in-out infinite;
 }
-@keyframes drift1 { to { transform: translate(140px, 90px) scale(1.18); } }
-@keyframes drift2 { to { transform: translate(-120px, 60px) scale(1.12); } }
-@keyframes drift3 { to { transform: translate(90px, -110px) scale(1.20); } }
-@keyframes drift4 { to { transform: translate(-90px, -70px) scale(1.15); } }
+@keyframes drift1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(260px, 160px) scale(1.25); }
+}
+@keyframes drift2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(-240px, 120px) scale(1.20); }
+}
+@keyframes drift3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(200px, -180px) scale(1.30); }
+}
+@keyframes drift4 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(-200px, -140px) scale(1.20); }
+}
 
 /* gentle shimmer on the hero gradient headline */
 .hero h1 .grad {
